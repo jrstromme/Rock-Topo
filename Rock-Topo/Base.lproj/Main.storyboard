@@ -1,27 +1,123 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zMT-vp-etj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Camera View Controller-->
+        <scene sceneID="ESU-TX-ZAP">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="RockTopoViewController" sceneMemberID="viewController">
+                <viewController id="zMT-vp-etj" customClass="cameraViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="JkG-x1-pRB"/>
+                        <viewControllerLayoutGuide type="bottom" id="ffF-zz-3jI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="ZFO-6J-aKf" customClass="cameraView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWd-HS-brc">
+                                <rect key="frame" x="124" y="465" width="73" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="3Tl-Yy-5ht"/>
+                                    <constraint firstAttribute="height" constant="73" id="jje-EK-Di6"/>
+                                </constraints>
+                                <state key="normal" image="PhotoCaptureButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="snapStillImage:" destination="zMT-vp-etj" eventType="touchUpInside" id="0sI-k0-kxa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3Q-sr-BvP">
+                                <rect key="frame" x="31" y="477" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BLT-pV-jwc"/>
+                                    <constraint firstAttribute="width" constant="50" id="cSf-mp-U0N"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="PhotoLibraryButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="accessPhotoLibrary:" destination="zMT-vp-etj" eventType="touchUpInside" id="RYh-nE-x1K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ffF-zz-3jI" firstAttribute="top" secondItem="gWd-HS-brc" secondAttribute="bottom" constant="30" id="46J-wW-J3r"/>
+                            <constraint firstItem="N3Q-sr-BvP" firstAttribute="leading" secondItem="ZFO-6J-aKf" secondAttribute="leading" constant="31" id="7aG-Zn-Yd0"/>
+                            <constraint firstItem="N3Q-sr-BvP" firstAttribute="centerY" secondItem="gWd-HS-brc" secondAttribute="centerY" constant="0.5" id="9pf-Va-VyK"/>
+                            <constraint firstItem="ffF-zz-3jI" firstAttribute="top" secondItem="gWd-HS-brc" secondAttribute="bottom" constant="30" id="mJC-dh-jDo"/>
+                            <constraint firstAttribute="centerX" secondItem="gWd-HS-brc" secondAttribute="centerX" constant="-0.5" id="o0Z-aj-UpT"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Nen-Rh-IOo" appends="YES" id="Psr-0f-igF"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="photoLibraryButton" destination="N3Q-sr-BvP" id="dgU-et-msQ"/>
+                        <outlet property="previewView" destination="ZFO-6J-aKf" id="cIr-VB-uAu"/>
+                        <outlet property="stillButton" destination="ZFO-6J-aKf" id="wRs-L0-Qes"/>
+                        <segue destination="rD7-g6-gf6" kind="modal" identifier="pushToEditor" id="xbF-ja-rKK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JDx-kH-4xs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Nen-Rh-IOo">
+                    <connections>
+                        <action selector="focusAndExposeTap:" destination="zMT-vp-etj" id="QcW-VY-DbK"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="47" y="-40"/>
+        </scene>
+        <!--Photo Editor View Controller - photoEditor-->
+        <scene sceneID="rp1-8F-pgF">
+            <objects>
+                <viewController title="photoEditor" id="rD7-g6-gf6" customClass="PhotoEditorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wlz-fk-rt8"/>
+                        <viewControllerLayoutGuide type="bottom" id="OCg-3o-So7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2p2-ud-rmr" customClass="UIImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0a-Xn-tCX">
+                                <rect key="frame" x="20" y="20" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelPhotoEditing:" destination="rD7-g6-gf6" eventType="touchUpInside" id="KuZ-2r-DO9"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ybi-sa-Qhu"/>
+                    <connections>
+                        <outlet property="cancelPhoto" destination="J0a-Xn-tCX" id="r4Q-Ix-aSY"/>
+                        <outlet property="photoView" destination="2p2-ud-rmr" id="p8D-qi-FqA"/>
+                        <segue destination="zMT-vp-etj" kind="modal" identifier="cancelEditorSegue" id="c8h-fF-w7W"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vNP-q7-Saw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="608" y="-32"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PhotoCaptureButton" width="200" height="200"/>
+        <image name="PhotoLibraryButton" width="256" height="256"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

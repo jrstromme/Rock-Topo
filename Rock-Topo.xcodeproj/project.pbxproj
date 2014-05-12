@@ -14,13 +14,17 @@
 		521306C0191EDC4900918F34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 521306BF191EDC4900918F34 /* main.m */; };
 		521306C4191EDC4900918F34 /* RockTopoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 521306C3191EDC4900918F34 /* RockTopoAppDelegate.m */; };
 		521306C7191EDC4900918F34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521306C5191EDC4900918F34 /* Main.storyboard */; };
-		521306CA191EDC4900918F34 /* RockTopoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 521306C9191EDC4900918F34 /* RockTopoViewController.m */; };
 		521306CC191EDC4900918F34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521306CB191EDC4900918F34 /* Images.xcassets */; };
 		521306D3191EDC4900918F34 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 521306D2191EDC4900918F34 /* XCTest.framework */; };
 		521306D4191EDC4900918F34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 521306B3191EDC4900918F34 /* Foundation.framework */; };
 		521306D5191EDC4900918F34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 521306B7191EDC4900918F34 /* UIKit.framework */; };
 		521306DD191EDC4900918F34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521306DB191EDC4900918F34 /* InfoPlist.strings */; };
 		521306DF191EDC4900918F34 /* Rock_TopoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 521306DE191EDC4900918F34 /* Rock_TopoTests.m */; };
+		5284307F191EE69000E7ECB8 /* camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284307E191EE69000E7ECB8 /* camera.m */; };
+		5284309819201BB100E7ECB8 /* cameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284309719201BB100E7ECB8 /* cameraViewController.m */; };
+		5284309B19201DA200E7ECB8 /* cameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284309A19201DA200E7ECB8 /* cameraView.m */; };
+		528430A619203DA700E7ECB8 /* PhotoEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528430A519203DA700E7ECB8 /* PhotoEditorViewController.m */; };
+		528430A91920445800E7ECB8 /* PhotoEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 528430A81920445800E7ECB8 /* PhotoEditorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +49,22 @@
 		521306C2191EDC4900918F34 /* RockTopoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RockTopoAppDelegate.h; sourceTree = "<group>"; };
 		521306C3191EDC4900918F34 /* RockTopoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RockTopoAppDelegate.m; sourceTree = "<group>"; };
 		521306C6191EDC4900918F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		521306C8191EDC4900918F34 /* RockTopoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RockTopoViewController.h; sourceTree = "<group>"; };
-		521306C9191EDC4900918F34 /* RockTopoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RockTopoViewController.m; sourceTree = "<group>"; };
 		521306CB191EDC4900918F34 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		521306D1191EDC4900918F34 /* Rock-TopoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rock-TopoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		521306D2191EDC4900918F34 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		521306DA191EDC4900918F34 /* Rock-TopoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Rock-TopoTests-Info.plist"; sourceTree = "<group>"; };
 		521306DC191EDC4900918F34 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		521306DE191EDC4900918F34 /* Rock_TopoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rock_TopoTests.m; sourceTree = "<group>"; };
+		5284307D191EE69000E7ECB8 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = camera.h; path = Model/camera.h; sourceTree = "<group>"; };
+		5284307E191EE69000E7ECB8 /* camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = camera.m; path = Model/camera.m; sourceTree = "<group>"; };
+		5284309619201BB100E7ECB8 /* cameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraViewController.h; sourceTree = "<group>"; };
+		5284309719201BB100E7ECB8 /* cameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cameraViewController.m; sourceTree = "<group>"; };
+		5284309919201DA200E7ECB8 /* cameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraView.h; sourceTree = "<group>"; };
+		5284309A19201DA200E7ECB8 /* cameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cameraView.m; sourceTree = "<group>"; };
+		528430A419203DA700E7ECB8 /* PhotoEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEditorViewController.h; sourceTree = "<group>"; };
+		528430A519203DA700E7ECB8 /* PhotoEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditorViewController.m; sourceTree = "<group>"; };
+		528430A71920445800E7ECB8 /* PhotoEditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEditorView.h; sourceTree = "<group>"; };
+		528430A81920445800E7ECB8 /* PhotoEditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditorView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +127,9 @@
 				521306C2191EDC4900918F34 /* RockTopoAppDelegate.h */,
 				521306C3191EDC4900918F34 /* RockTopoAppDelegate.m */,
 				521306C5191EDC4900918F34 /* Main.storyboard */,
-				521306C8191EDC4900918F34 /* RockTopoViewController.h */,
-				521306C9191EDC4900918F34 /* RockTopoViewController.m */,
+				5284309C19201DAB00E7ECB8 /* Camera */,
+				5284309D19203C3A00E7ECB8 /* PhotoEditor */,
+				52843080191EE6A300E7ECB8 /* Model */,
 				521306CB191EDC4900918F34 /* Images.xcassets */,
 				521306BA191EDC4900918F34 /* Supporting Files */,
 			);
@@ -150,6 +163,37 @@
 				521306DB191EDC4900918F34 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52843080191EE6A300E7ECB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5284307D191EE69000E7ECB8 /* camera.h */,
+				5284307E191EE69000E7ECB8 /* camera.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5284309C19201DAB00E7ECB8 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				5284309919201DA200E7ECB8 /* cameraView.h */,
+				5284309A19201DA200E7ECB8 /* cameraView.m */,
+				5284309619201BB100E7ECB8 /* cameraViewController.h */,
+				5284309719201BB100E7ECB8 /* cameraViewController.m */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		5284309D19203C3A00E7ECB8 /* PhotoEditor */ = {
+			isa = PBXGroup;
+			children = (
+				528430A419203DA700E7ECB8 /* PhotoEditorViewController.h */,
+				528430A519203DA700E7ECB8 /* PhotoEditorViewController.m */,
+				528430A71920445800E7ECB8 /* PhotoEditorView.h */,
+				528430A81920445800E7ECB8 /* PhotoEditorView.m */,
+			);
+			name = PhotoEditor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +294,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				528430A619203DA700E7ECB8 /* PhotoEditorViewController.m in Sources */,
+				5284309819201BB100E7ECB8 /* cameraViewController.m in Sources */,
+				5284307F191EE69000E7ECB8 /* camera.m in Sources */,
+				5284309B19201DA200E7ECB8 /* cameraView.m in Sources */,
 				521306C0191EDC4900918F34 /* main.m in Sources */,
-				521306CA191EDC4900918F34 /* RockTopoViewController.m in Sources */,
 				521306C4191EDC4900918F34 /* RockTopoAppDelegate.m in Sources */,
+				528430A91920445800E7ECB8 /* PhotoEditorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +505,7 @@
 				521306E4191EDC4900918F34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		521306E5191EDC4900918F34 /* Build configuration list for PBXNativeTarget "Rock-TopoTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +514,7 @@
 				521306E7191EDC4900918F34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
