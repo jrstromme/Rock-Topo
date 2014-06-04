@@ -20,7 +20,6 @@
 		521306D5191EDC4900918F34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 521306B7191EDC4900918F34 /* UIKit.framework */; };
 		521306DD191EDC4900918F34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521306DB191EDC4900918F34 /* InfoPlist.strings */; };
 		521306DF191EDC4900918F34 /* Rock_TopoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 521306DE191EDC4900918F34 /* Rock_TopoTests.m */; };
-		5284307F191EE69000E7ECB8 /* camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284307E191EE69000E7ECB8 /* camera.m */; };
 		5284309819201BB100E7ECB8 /* cameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284309719201BB100E7ECB8 /* cameraViewController.m */; };
 		5284309B19201DA200E7ECB8 /* cameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284309A19201DA200E7ECB8 /* cameraView.m */; };
 		528430A619203DA700E7ECB8 /* PhotoEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528430A519203DA700E7ECB8 /* PhotoEditorViewController.m */; };
@@ -55,8 +54,6 @@
 		521306DA191EDC4900918F34 /* Rock-TopoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Rock-TopoTests-Info.plist"; sourceTree = "<group>"; };
 		521306DC191EDC4900918F34 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		521306DE191EDC4900918F34 /* Rock_TopoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rock_TopoTests.m; sourceTree = "<group>"; };
-		5284307D191EE69000E7ECB8 /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = camera.h; path = Model/camera.h; sourceTree = "<group>"; };
-		5284307E191EE69000E7ECB8 /* camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = camera.m; path = Model/camera.m; sourceTree = "<group>"; };
 		5284309619201BB100E7ECB8 /* cameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraViewController.h; sourceTree = "<group>"; };
 		5284309719201BB100E7ECB8 /* cameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cameraViewController.m; sourceTree = "<group>"; };
 		5284309919201DA200E7ECB8 /* cameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraView.h; sourceTree = "<group>"; };
@@ -168,8 +165,6 @@
 		52843080191EE6A300E7ECB8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5284307D191EE69000E7ECB8 /* camera.h */,
-				5284307E191EE69000E7ECB8 /* camera.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -188,10 +183,10 @@
 		5284309D19203C3A00E7ECB8 /* PhotoEditor */ = {
 			isa = PBXGroup;
 			children = (
-				528430A419203DA700E7ECB8 /* PhotoEditorViewController.h */,
-				528430A519203DA700E7ECB8 /* PhotoEditorViewController.m */,
 				528430A71920445800E7ECB8 /* PhotoEditorView.h */,
 				528430A81920445800E7ECB8 /* PhotoEditorView.m */,
+				528430A419203DA700E7ECB8 /* PhotoEditorViewController.h */,
+				528430A519203DA700E7ECB8 /* PhotoEditorViewController.m */,
 			);
 			name = PhotoEditor;
 			sourceTree = "<group>";
@@ -296,7 +291,6 @@
 			files = (
 				528430A619203DA700E7ECB8 /* PhotoEditorViewController.m in Sources */,
 				5284309819201BB100E7ECB8 /* cameraViewController.m in Sources */,
-				5284307F191EE69000E7ECB8 /* camera.m in Sources */,
 				5284309B19201DA200E7ECB8 /* cameraView.m in Sources */,
 				521306C0191EDC4900918F34 /* main.m in Sources */,
 				521306C4191EDC4900918F34 /* RockTopoAppDelegate.m in Sources */,
