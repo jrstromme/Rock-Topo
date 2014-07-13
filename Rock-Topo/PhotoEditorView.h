@@ -12,13 +12,4 @@
 
 @property (nonatomic, strong) UIImage *rockPhoto;
 
-@property (strong, nonatomic) NSMutableArray * drawing;
-
-@property (strong,nonatomic) NSString *color;
-
-//@property (strong, nonatomic) NSString *tool;
-
-//@property (strong, nonatomic) NSMutableArray *paths;
-
-
 @end

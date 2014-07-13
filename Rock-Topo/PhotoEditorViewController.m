@@ -36,6 +36,7 @@
 @implementation PhotoEditorViewController
 
 
+#pragma mark - Lazy-Instantiation
 - (DrawingOverlay *) drawingOverlay {
     if (!_drawingOverlay){
         _drawingOverlay = [[DrawingOverlay alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
@@ -44,6 +45,16 @@
 }
 
 
+-(UIBezierPath *) path {
+    if (!_path){
+        _path = [UIBezierPath bezierPath];
+        [_path setLineWidth:4.0];
+    }
+    return _path;
+}
+
+
+#pragma mark - classic-overrides
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -79,33 +90,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
--(UIBezierPath *) path {
-    if (!_path){
-        _path = [UIBezierPath bezierPath];
-        [_path setLineWidth:4.0];
-    }
-    return _path;
-}
+#pragma mark - Button-Work
 
 - (IBAction)cancelPhotoEditing:(id)sender {
     [self exitEditor];
 }
-
-- (void) finishedSaveImage: (UIImage *) Image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo{
-    [self exitEditor];
-}
-
 
 - (void) exitEditor{
     [self performSegueWithIdentifier:@"cancelEditorSegue" sender:self];
@@ -161,6 +151,12 @@
     UIImageWriteToSavedPhotosAlbum(finishedImage, self, @selector(finishedSaveImage:didFinishSavingWithError:contextInfo:), nil);
 }
 
+- (void) finishedSaveImage: (UIImage *) Image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo{
+    [self exitEditor];
+}
+
+
+#pragma mark - Drawing-touches
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     if ([self.tool isEqualToString:@"pen"]) {

@@ -43,51 +43,8 @@
 }
 
 
-
-
 - (void) drawRect:(CGRect)rect {
-    
-    /*
-    if (!self.drawing) {
-        self.drawing = [[NSMutableArray alloc] initWithCapacity:0];
-    }
-    
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
     [self.rockPhoto drawInRect:[[UIScreen mainScreen]bounds]];
-    if ([self.tool isEqualToString:@"pen"]){
-        if ([self.drawing count] > 0) {
-            CGContextSetLineWidth(ctx, 5);
-            for (int i=0; i < [self.drawing count]; i++) {
-                NSArray *array = [self.drawing objectAtIndex:i];
-                if ([array count] > 2) {
-                    float x = [[array objectAtIndex:0] floatValue];
-                    float y = [[array objectAtIndex:1] floatValue];
-                    CGContextBeginPath(ctx);
-                    CGContextMoveToPoint(ctx, x, y);
-                    for (int j = 2; j < [array count]; j+=2) {
-                        x = [[array objectAtIndex:j] floatValue];
-                        y = [[array objectAtIndex:j+1] floatValue];
-                        CGContextAddLineToPoint(ctx, x, y);
-                    }
-                    CGContextStrokePath(ctx);
-                }
-            }
-        }
-    }
-    */
-    [self.rockPhoto drawInRect:[[UIScreen mainScreen]bounds]];
-    
-    //THIS IS THE PART THAT IS RUNNING SLOW. NEED TO SUBVIEW????
-    
-    /*
-    if ([self.tool isEqualToString:@"pen"] || [self.tool isEqualToString:@"straight"]){
-        [[UIColor blackColor] setStroke];
-        for (UIBezierPath *tempPath in self.paths) {
-            [tempPath stroke];
-        }
-        //[self.path stroke];
-        //[self.straightPath stroke];
-    }*/
 }
 
 

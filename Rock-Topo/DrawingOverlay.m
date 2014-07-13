@@ -30,12 +30,11 @@
 }
 
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
+
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
-    [[UIColor blackColor] setStroke];
+    [[UIColor redColor] setStroke];
     for (UIBezierPath *tempPath in self.paths) {
         [tempPath stroke]; }
 }
