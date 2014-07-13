@@ -12,17 +12,24 @@
 @interface PhotoEditorView ()
 
 
-
 @end
 
 @implementation PhotoEditorView
 
+/*
 - (NSString *) tool {
     if (!_tool) {
         _tool = @"";
     }
     return _tool;
 }
+
+- (NSMutableArray *) paths {
+    if (!_paths) {
+        _paths = [[NSMutableArray alloc] init];
+    }
+    return _paths;
+}*/
 
 
 - (id)initWithFrame:(CGRect)frame
@@ -39,6 +46,8 @@
 
 
 - (void) drawRect:(CGRect)rect {
+    
+    /*
     if (!self.drawing) {
         self.drawing = [[NSMutableArray alloc] initWithCapacity:0];
     }
@@ -65,8 +74,20 @@
             }
         }
     }
+    */
+    [self.rockPhoto drawInRect:[[UIScreen mainScreen]bounds]];
     
+    //THIS IS THE PART THAT IS RUNNING SLOW. NEED TO SUBVIEW????
     
+    /*
+    if ([self.tool isEqualToString:@"pen"] || [self.tool isEqualToString:@"straight"]){
+        [[UIColor blackColor] setStroke];
+        for (UIBezierPath *tempPath in self.paths) {
+            [tempPath stroke];
+        }
+        //[self.path stroke];
+        //[self.straightPath stroke];
+    }*/
 }
 
 

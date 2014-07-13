@@ -24,6 +24,7 @@
 		5284309B19201DA200E7ECB8 /* cameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284309A19201DA200E7ECB8 /* cameraView.m */; };
 		528430A619203DA700E7ECB8 /* PhotoEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528430A519203DA700E7ECB8 /* PhotoEditorViewController.m */; };
 		528430A91920445800E7ECB8 /* PhotoEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 528430A81920445800E7ECB8 /* PhotoEditorView.m */; };
+		52F1F41419724F4600740CF2 /* DrawingOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F1F41319724F4600740CF2 /* DrawingOverlay.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		528430A519203DA700E7ECB8 /* PhotoEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditorViewController.m; sourceTree = "<group>"; };
 		528430A71920445800E7ECB8 /* PhotoEditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEditorView.h; sourceTree = "<group>"; };
 		528430A81920445800E7ECB8 /* PhotoEditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditorView.m; sourceTree = "<group>"; };
+		52F1F41219724F4600740CF2 /* DrawingOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingOverlay.h; sourceTree = "<group>"; };
+		52F1F41319724F4600740CF2 /* DrawingOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingOverlay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +188,8 @@
 			children = (
 				528430A71920445800E7ECB8 /* PhotoEditorView.h */,
 				528430A81920445800E7ECB8 /* PhotoEditorView.m */,
+				52F1F41219724F4600740CF2 /* DrawingOverlay.h */,
+				52F1F41319724F4600740CF2 /* DrawingOverlay.m */,
 				528430A419203DA700E7ECB8 /* PhotoEditorViewController.h */,
 				528430A519203DA700E7ECB8 /* PhotoEditorViewController.m */,
 			);
@@ -295,6 +300,7 @@
 				521306C0191EDC4900918F34 /* main.m in Sources */,
 				521306C4191EDC4900918F34 /* RockTopoAppDelegate.m in Sources */,
 				528430A91920445800E7ECB8 /* PhotoEditorView.m in Sources */,
+				52F1F41419724F4600740CF2 /* DrawingOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

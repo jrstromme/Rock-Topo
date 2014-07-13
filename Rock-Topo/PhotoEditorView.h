@@ -16,6 +16,9 @@
 
 @property (strong,nonatomic) NSString *color;
 
-@property (strong, nonatomic) NSString *tool;
+//@property (strong, nonatomic) NSString *tool;
+
+//@property (strong, nonatomic) NSMutableArray *paths;
+
 
 @end

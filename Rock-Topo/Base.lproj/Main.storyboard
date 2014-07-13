@@ -123,11 +123,25 @@
                                     <action selector="selectPenTool:" destination="rD7-g6-gf6" eventType="touchUpInside" id="qUa-JC-Tux"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxZ-Wn-zhJ">
+                                <rect key="frame" x="214" y="66" width="43" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Strait">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectPenTool:" destination="rD7-g6-gf6" eventType="touchUpInside" id="Ana-xq-ILY"/>
+                                    <action selector="selectStraightLine:" destination="rD7-g6-gf6" eventType="touchUpInside" id="F2o-UT-FMB"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHE-Q8-1kn">
                                 <rect key="frame" x="219" y="518" width="81" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save Image">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="saveImage:" destination="rD7-g6-gf6" eventType="touchUpInside" id="eaD-b5-vXY"/>
@@ -142,6 +156,7 @@
                         <outlet property="lineButton" destination="7Je-jO-BU4" id="pCo-u1-9hM"/>
                         <outlet property="photoView" destination="2p2-ud-rmr" id="e2F-1k-V37"/>
                         <outlet property="saveImageButton" destination="nHE-Q8-1kn" id="oBT-Ay-hPn"/>
+                        <outlet property="straightButton" destination="OxZ-Wn-zhJ" id="lhD-pO-R2B"/>
                         <outlet property="toggleEditingToolsButton" destination="DcV-Wa-Lck" id="mTM-Hc-pkn"/>
                         <segue destination="zMT-vp-etj" kind="modal" identifier="cancelEditorSegue" id="c8h-fF-w7W"/>
                     </connections>
