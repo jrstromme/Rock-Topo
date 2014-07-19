@@ -13,17 +13,21 @@
 		521306BE191EDC4900918F34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521306BC191EDC4900918F34 /* InfoPlist.strings */; };
 		521306C0191EDC4900918F34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 521306BF191EDC4900918F34 /* main.m */; };
 		521306C4191EDC4900918F34 /* RockTopoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 521306C3191EDC4900918F34 /* RockTopoAppDelegate.m */; };
-		521306C7191EDC4900918F34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521306C5191EDC4900918F34 /* Main.storyboard */; };
 		521306CC191EDC4900918F34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521306CB191EDC4900918F34 /* Images.xcassets */; };
 		521306D3191EDC4900918F34 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 521306D2191EDC4900918F34 /* XCTest.framework */; };
 		521306D4191EDC4900918F34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 521306B3191EDC4900918F34 /* Foundation.framework */; };
 		521306D5191EDC4900918F34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 521306B7191EDC4900918F34 /* UIKit.framework */; };
 		521306DD191EDC4900918F34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 521306DB191EDC4900918F34 /* InfoPlist.strings */; };
 		521306DF191EDC4900918F34 /* Rock_TopoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 521306DE191EDC4900918F34 /* Rock_TopoTests.m */; };
+		5231C3331972F1910090F055 /* SaveImageSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5231C3321972F1910090F055 /* SaveImageSettingsView.m */; };
+		5231C3361972F3530090F055 /* SaveImageSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5231C3351972F3530090F055 /* SaveImageSettingsViewController.m */; };
+		5231C339197A21720090F055 /* NSMutableDictionary+ImageMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 5231C338197A21720090F055 /* NSMutableDictionary+ImageMetadata.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5284309819201BB100E7ECB8 /* cameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284309719201BB100E7ECB8 /* cameraViewController.m */; };
 		5284309B19201DA200E7ECB8 /* cameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5284309A19201DA200E7ECB8 /* cameraView.m */; };
 		528430A619203DA700E7ECB8 /* PhotoEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528430A519203DA700E7ECB8 /* PhotoEditorViewController.m */; };
 		528430A91920445800E7ECB8 /* PhotoEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 528430A81920445800E7ECB8 /* PhotoEditorView.m */; };
+		528CF67E197AE39E006041C6 /* Default-586h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528CF67D197AE39E006041C6 /* Default-586h@2x.png */; };
+		52DAC336197AF3E5009B1605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52DAC334197AF3E5009B1605 /* Main.storyboard */; };
 		52F1F41419724F4600740CF2 /* DrawingOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F1F41319724F4600740CF2 /* DrawingOverlay.m */; };
 /* End PBXBuildFile section */
 
@@ -48,13 +52,18 @@
 		521306C1191EDC4900918F34 /* Rock-Topo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rock-Topo-Prefix.pch"; sourceTree = "<group>"; };
 		521306C2191EDC4900918F34 /* RockTopoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RockTopoAppDelegate.h; sourceTree = "<group>"; };
 		521306C3191EDC4900918F34 /* RockTopoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RockTopoAppDelegate.m; sourceTree = "<group>"; };
-		521306C6191EDC4900918F34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		521306CB191EDC4900918F34 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		521306D1191EDC4900918F34 /* Rock-TopoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rock-TopoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		521306D2191EDC4900918F34 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		521306DA191EDC4900918F34 /* Rock-TopoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Rock-TopoTests-Info.plist"; sourceTree = "<group>"; };
 		521306DC191EDC4900918F34 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		521306DE191EDC4900918F34 /* Rock_TopoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rock_TopoTests.m; sourceTree = "<group>"; };
+		5231C3311972F1910090F055 /* SaveImageSettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveImageSettingsView.h; sourceTree = "<group>"; };
+		5231C3321972F1910090F055 /* SaveImageSettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveImageSettingsView.m; sourceTree = "<group>"; };
+		5231C3341972F3530090F055 /* SaveImageSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveImageSettingsViewController.h; sourceTree = "<group>"; };
+		5231C3351972F3530090F055 /* SaveImageSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveImageSettingsViewController.m; sourceTree = "<group>"; };
+		5231C337197A21720090F055 /* NSMutableDictionary+ImageMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+ImageMetadata.h"; sourceTree = "<group>"; };
+		5231C338197A21720090F055 /* NSMutableDictionary+ImageMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+ImageMetadata.m"; sourceTree = "<group>"; };
 		5284309619201BB100E7ECB8 /* cameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraViewController.h; sourceTree = "<group>"; };
 		5284309719201BB100E7ECB8 /* cameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cameraViewController.m; sourceTree = "<group>"; };
 		5284309919201DA200E7ECB8 /* cameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraView.h; sourceTree = "<group>"; };
@@ -63,6 +72,8 @@
 		528430A519203DA700E7ECB8 /* PhotoEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditorViewController.m; sourceTree = "<group>"; };
 		528430A71920445800E7ECB8 /* PhotoEditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEditorView.h; sourceTree = "<group>"; };
 		528430A81920445800E7ECB8 /* PhotoEditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditorView.m; sourceTree = "<group>"; };
+		528CF67D197AE39E006041C6 /* Default-586h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-586h@2x.png"; path = "../Default-586h@2x.png"; sourceTree = "<group>"; };
+		52DAC335197AF3E5009B1605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52F1F41219724F4600740CF2 /* DrawingOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingOverlay.h; sourceTree = "<group>"; };
 		52F1F41319724F4600740CF2 /* DrawingOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingOverlay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +105,7 @@
 		521306A7191EDC4900918F34 = {
 			isa = PBXGroup;
 			children = (
+				5231C33A197A21760090F055 /* exif Handler */,
 				521306B9191EDC4900918F34 /* Rock-Topo */,
 				521306D8191EDC4900918F34 /* Rock-TopoTests */,
 				521306B2191EDC4900918F34 /* Frameworks */,
@@ -126,7 +138,7 @@
 			children = (
 				521306C2191EDC4900918F34 /* RockTopoAppDelegate.h */,
 				521306C3191EDC4900918F34 /* RockTopoAppDelegate.m */,
-				521306C5191EDC4900918F34 /* Main.storyboard */,
+				52DAC334197AF3E5009B1605 /* Main.storyboard */,
 				5284309C19201DAB00E7ECB8 /* Camera */,
 				5284309D19203C3A00E7ECB8 /* PhotoEditor */,
 				52843080191EE6A300E7ECB8 /* Model */,
@@ -139,6 +151,7 @@
 		521306BA191EDC4900918F34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				528CF67D197AE39E006041C6 /* Default-586h@2x.png */,
 				521306BB191EDC4900918F34 /* Rock-Topo-Info.plist */,
 				521306BC191EDC4900918F34 /* InfoPlist.strings */,
 				521306BF191EDC4900918F34 /* main.m */,
@@ -163,6 +176,26 @@
 				521306DB191EDC4900918F34 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5231C3301972F12E0090F055 /* SaveImage */ = {
+			isa = PBXGroup;
+			children = (
+				5231C3311972F1910090F055 /* SaveImageSettingsView.h */,
+				5231C3321972F1910090F055 /* SaveImageSettingsView.m */,
+				5231C3341972F3530090F055 /* SaveImageSettingsViewController.h */,
+				5231C3351972F3530090F055 /* SaveImageSettingsViewController.m */,
+			);
+			name = SaveImage;
+			sourceTree = "<group>";
+		};
+		5231C33A197A21760090F055 /* exif Handler */ = {
+			isa = PBXGroup;
+			children = (
+				5231C337197A21720090F055 /* NSMutableDictionary+ImageMetadata.h */,
+				5231C338197A21720090F055 /* NSMutableDictionary+ImageMetadata.m */,
+			);
+			name = "exif Handler";
 			sourceTree = "<group>";
 		};
 		52843080191EE6A300E7ECB8 /* Model */ = {
@@ -192,6 +225,7 @@
 				52F1F41319724F4600740CF2 /* DrawingOverlay.m */,
 				528430A419203DA700E7ECB8 /* PhotoEditorViewController.h */,
 				528430A519203DA700E7ECB8 /* PhotoEditorViewController.m */,
+				5231C3301972F12E0090F055 /* SaveImage */,
 			);
 			name = PhotoEditor;
 			sourceTree = "<group>";
@@ -274,8 +308,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				521306CC191EDC4900918F34 /* Images.xcassets in Resources */,
+				528CF67E197AE39E006041C6 /* Default-586h@2x.png in Resources */,
 				521306BE191EDC4900918F34 /* InfoPlist.strings in Resources */,
-				521306C7191EDC4900918F34 /* Main.storyboard in Resources */,
+				52DAC336197AF3E5009B1605 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +329,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5231C3361972F3530090F055 /* SaveImageSettingsViewController.m in Sources */,
 				528430A619203DA700E7ECB8 /* PhotoEditorViewController.m in Sources */,
+				5231C339197A21720090F055 /* NSMutableDictionary+ImageMetadata.m in Sources */,
+				5231C3331972F1910090F055 /* SaveImageSettingsView.m in Sources */,
 				5284309819201BB100E7ECB8 /* cameraViewController.m in Sources */,
 				5284309B19201DA200E7ECB8 /* cameraView.m in Sources */,
 				521306C0191EDC4900918F34 /* main.m in Sources */,
@@ -331,20 +369,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		521306C5191EDC4900918F34 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				521306C6191EDC4900918F34 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		521306DB191EDC4900918F34 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				521306DC191EDC4900918F34 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		52DAC334197AF3E5009B1605 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52DAC335197AF3E5009B1605 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

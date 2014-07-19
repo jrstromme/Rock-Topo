@@ -137,7 +137,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHE-Q8-1kn">
-                                <rect key="frame" x="219" y="518" width="81" height="30"/>
+                                <rect key="frame" x="214" y="512" width="95" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save Image">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -145,6 +145,17 @@
                                 </state>
                                 <connections>
                                     <action selector="saveImage:" destination="rD7-g6-gf6" eventType="touchUpInside" id="eaD-b5-vXY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiP-Me-gd1">
+                                <rect key="frame" x="20" y="518" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Undo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="undo:" destination="rD7-g6-gf6" eventType="touchUpInside" id="6ae-H1-nIA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -158,12 +169,125 @@
                         <outlet property="saveImageButton" destination="nHE-Q8-1kn" id="oBT-Ay-hPn"/>
                         <outlet property="straightButton" destination="OxZ-Wn-zhJ" id="lhD-pO-R2B"/>
                         <outlet property="toggleEditingToolsButton" destination="DcV-Wa-Lck" id="mTM-Hc-pkn"/>
+                        <outlet property="undoButton" destination="EiP-Me-gd1" id="S3R-Ai-PTI"/>
                         <segue destination="zMT-vp-etj" kind="modal" identifier="cancelEditorSegue" id="c8h-fF-w7W"/>
+                        <segue destination="QNJ-Cg-iWZ" kind="modal" identifier="pushToRouteInfo" customClass="UIStoryboardPopoverSegue" id="2Fz-DT-n4v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vNP-q7-Saw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="608" y="-32"/>
+            <point key="canvasLocation" x="596" y="540"/>
+        </scene>
+        <!--Save Image Settings View Controller - SaveImageSettings-->
+        <scene sceneID="2MO-TY-DwF">
+            <objects>
+                <viewController title="SaveImageSettings" id="QNJ-Cg-iWZ" customClass="SaveImageSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PYX-ep-Czy"/>
+                        <viewControllerLayoutGuide type="bottom" id="6aV-UB-ZIK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="utQ-nj-wLn" customClass="SaveImageSettingsView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6I-rY-yPu">
+                                <rect key="frame" x="14" y="73" width="292" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Write a caption" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="4PG-Y5-za3">
+                                        <rect key="frame" x="91" y="7" width="195" height="79"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" returnKeyType="done"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7e6-ii-Bxk">
+                                <rect key="frame" x="20" y="79" width="79" height="82"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqB-55-n7h">
+                                <rect key="frame" x="0.0" y="18" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Route Information" id="mFi-sr-RJ1"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2D-eb-jc1">
+                                <rect key="frame" x="230" y="505" width="76" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Finished">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveImageWithMetadata:" destination="QNJ-Cg-iWZ" eventType="touchUpInside" id="2PN-tD-cND"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r87-Ia-J12">
+                                <rect key="frame" x="0.0" y="235" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OgO-m6-9WH">
+                                <rect key="frame" x="0.0" y="191" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Route Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K6M-LQ-fsD">
+                                <rect key="frame" x="20" y="191" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="alphabet" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Rating" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vkh-Ke-74I">
+                                <rect key="frame" x="20" y="235" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BPx-6k-pfz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="E0M-Dx-0LH" appends="YES" id="B8x-Dc-icY"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="lKI-wr-ZrR"/>
+                    <connections>
+                        <outlet property="captionTextField" destination="4PG-Y5-za3" id="6uf-DU-WIz"/>
+                        <outlet property="imageSavedBackground" destination="BPx-6k-pfz" id="BgO-qr-Bcu"/>
+                        <outlet property="imageThumbnail" destination="7e6-ii-Bxk" id="zmL-Ev-326"/>
+                        <outlet property="routeName" destination="K6M-LQ-fsD" id="oWo-sn-57o"/>
+                        <outlet property="routeRating" destination="vkh-Ke-74I" id="ulv-OO-njX"/>
+                        <outlet property="saveImage" destination="k2D-eb-jc1" id="ukf-HU-0GS"/>
+                        <outlet property="tapRecognizer" destination="E0M-Dx-0LH" id="5RN-qT-fgV"/>
+                        <segue destination="zMT-vp-etj" kind="modal" identifier="returnToCamera" id="jsL-Q6-x6B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c6m-J8-4GT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="E0M-Dx-0LH">
+                    <connections>
+                        <action selector="tapRecognizer:" destination="QNJ-Cg-iWZ" id="Sld-E8-QlE"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1166" y="876"/>
         </scene>
     </scenes>
     <resources>
@@ -175,4 +299,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="jsL-Q6-x6B"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -193,7 +193,6 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     if ([[segue identifier] isEqualToString:@"pushToEditor"]) {
         PhotoEditorViewController *destination = segue.destinationViewController;
         destination.rockPhoto = self.capturedImage;
-        NSLog(@"image saved");
     }
 }
 

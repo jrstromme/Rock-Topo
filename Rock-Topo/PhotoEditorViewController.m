@@ -10,6 +10,7 @@
 #import "PhotoEditorView.h"
 #import "cameraViewController.h"
 #import "DrawingOverlay.h"
+#import "SaveImageSettingsViewController.h"
 
 @interface PhotoEditorViewController ()
 
@@ -22,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *straightButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *saveImageButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *undoButton;
 
 @property CGPoint staticPoint;
 
@@ -90,6 +93,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"pushToRouteInfo"]) {
+        SaveImageSettingsViewController *destination = segue.destinationViewController;
+        destination.imageToSave = self.rockPhoto;
+    }
+}
+
 
 #pragma mark - Button-Work
 
@@ -138,6 +148,12 @@
     self.tool = nil;
 }
 
+- (IBAction)undo:(id)sender {
+    [self.drawingOverlay.paths removeLastObject];
+    [self.drawingOverlay setNeedsDisplay];
+}
+
+
 - (IBAction)saveImage:(id)sender {
     UIGraphicsBeginImageContext(self.view.bounds.size);
     [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -146,9 +162,12 @@
     [self.toggleEditingToolsButton removeFromSuperview];
     [self.lineButton removeFromSuperview];
     [self.saveImageButton removeFromSuperview];
+    [self.undoButton removeFromSuperview];
     UIImage *finishedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    UIImageWriteToSavedPhotosAlbum(finishedImage, self, @selector(finishedSaveImage:didFinishSavingWithError:contextInfo:), nil);
+    self.rockPhoto = finishedImage;
+    //UIImageWriteToSavedPhotosAlbum(finishedImage, self, @selector(finishedSaveImage:didFinishSavingWithError:contextInfo:), nil);
+    [self performSegueWithIdentifier:@"pushToRouteInfo" sender:self];
 }
 
 - (void) finishedSaveImage: (UIImage *) Image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo{
