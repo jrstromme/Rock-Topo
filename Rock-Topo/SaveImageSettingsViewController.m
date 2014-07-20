@@ -17,6 +17,7 @@
 
 @property (strong, nonatomic) NSMutableDictionary *exif;
 @property (weak, nonatomic) IBOutlet UIButton *saveImage;
+@property (weak, nonatomic) IBOutlet UIButton *backToEditor;
 @property CLLocationManager *manager;
 @property (weak, nonatomic) IBOutlet UIImageView *imageThumbnail;
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapRecognizer;
@@ -119,7 +120,7 @@
 
 - (IBAction)saveImageWithMetadata:(id)sender {
     //set up metadata
-    [self.exif setImageOrientation:UIImageOrientationRight];
+    [self.exif setImageOrientation:UIImageOrientationUp];
     if (![self.captionTextField.text isEqualToString:@""]) {
         [self.exif setUserComment:self.captionTextField.text];
     }
@@ -129,11 +130,14 @@
         [self.imageSavedBackground setHidden:NO];
         UIImage *img = [UIImage imageNamed:@"saveScreen"];
         self.imageSavedBackground.image = img;
-        [self performSelector:@selector(segueBackToCamera) withObject:self afterDelay:0.5];
+        [self performSelector:@selector(segueBackToCamera) withObject:self afterDelay:0.8];
     }];
 }
 
 - (void) segueBackToCamera {
+    [self performSegueWithIdentifier:@"returnToCamera" sender:self];
+}
+- (IBAction)segueBackToEditor:(id)sender {
     [self performSegueWithIdentifier:@"returnToCamera" sender:self];
 }
 

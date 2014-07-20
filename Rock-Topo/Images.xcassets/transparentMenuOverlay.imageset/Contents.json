@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "captureButton-1.png"
+      "filename" : "transparentMenuOverlay.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "captureButton.png"
+      "filename" : "transparentMenuOverlay-1.png"
     }
   ],
   "info" : {

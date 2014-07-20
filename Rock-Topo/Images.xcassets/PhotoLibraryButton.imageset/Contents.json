@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "white_square_with_rounded_corners_u25A2_icon_256x256.png"
+      "filename" : "captureButton-1.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "white_square_with_rounded_corners_u25A2_icon_256x256-1.png"
+      "filename" : "captureButton.png"
     }
   ],
   "info" : {

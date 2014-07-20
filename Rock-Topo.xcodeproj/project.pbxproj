@@ -27,6 +27,7 @@
 		528430A619203DA700E7ECB8 /* PhotoEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 528430A519203DA700E7ECB8 /* PhotoEditorViewController.m */; };
 		528430A91920445800E7ECB8 /* PhotoEditorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 528430A81920445800E7ECB8 /* PhotoEditorView.m */; };
 		528CF67E197AE39E006041C6 /* Default-586h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 528CF67D197AE39E006041C6 /* Default-586h@2x.png */; };
+		52C94800197C1961006B0209 /* MenuSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C947FF197C1961006B0209 /* MenuSubView.m */; };
 		52DAC336197AF3E5009B1605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52DAC334197AF3E5009B1605 /* Main.storyboard */; };
 		52F1F41419724F4600740CF2 /* DrawingOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F1F41319724F4600740CF2 /* DrawingOverlay.m */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,8 @@
 		528430A71920445800E7ECB8 /* PhotoEditorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEditorView.h; sourceTree = "<group>"; };
 		528430A81920445800E7ECB8 /* PhotoEditorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditorView.m; sourceTree = "<group>"; };
 		528CF67D197AE39E006041C6 /* Default-586h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-586h@2x.png"; path = "../Default-586h@2x.png"; sourceTree = "<group>"; };
+		52C947FE197C1961006B0209 /* MenuSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuSubView.h; sourceTree = "<group>"; };
+		52C947FF197C1961006B0209 /* MenuSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuSubView.m; sourceTree = "<group>"; };
 		52DAC335197AF3E5009B1605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52F1F41219724F4600740CF2 /* DrawingOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingOverlay.h; sourceTree = "<group>"; };
 		52F1F41319724F4600740CF2 /* DrawingOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingOverlay.m; sourceTree = "<group>"; };
@@ -212,6 +215,7 @@
 				5284309A19201DA200E7ECB8 /* cameraView.m */,
 				5284309619201BB100E7ECB8 /* cameraViewController.h */,
 				5284309719201BB100E7ECB8 /* cameraViewController.m */,
+				52C947FD197C1945006B0209 /* Menu Sub View */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -228,6 +232,15 @@
 				5231C3301972F12E0090F055 /* SaveImage */,
 			);
 			name = PhotoEditor;
+			sourceTree = "<group>";
+		};
+		52C947FD197C1945006B0209 /* Menu Sub View */ = {
+			isa = PBXGroup;
+			children = (
+				52C947FE197C1961006B0209 /* MenuSubView.h */,
+				52C947FF197C1961006B0209 /* MenuSubView.m */,
+			);
+			name = "Menu Sub View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +351,7 @@
 				521306C0191EDC4900918F34 /* main.m in Sources */,
 				521306C4191EDC4900918F34 /* RockTopoAppDelegate.m in Sources */,
 				528430A91920445800E7ECB8 /* PhotoEditorView.m in Sources */,
+				52C94800197C1961006B0209 /* MenuSubView.m in Sources */,
 				52F1F41419724F4600740CF2 /* DrawingOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

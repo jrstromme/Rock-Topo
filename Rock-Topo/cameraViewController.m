@@ -8,10 +8,13 @@
 
 #import "cameraViewController.h"
 #import "PhotoEditorViewController.h"
+#import "MenuSubView.h"
+#import "cameraView.h"
+
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 
-#import "cameraView.h"
+
 
 
 static void * CapturingStillImageContext = &CapturingStillImageContext;
@@ -21,9 +24,14 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 @interface cameraViewController () <AVCaptureFileOutputRecordingDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 // For use in the storyboards.
+@property (weak, nonatomic) IBOutlet UIButton *enableCameraButton;
 @property (nonatomic, weak) IBOutlet cameraView *previewView;
 @property (weak, nonatomic) IBOutlet UIButton *stillButton;
 @property (weak, nonatomic) IBOutlet UIButton *photoLibraryButton;
+@property (weak, nonatomic) IBOutlet UIButton *returnToMenuButton;
+@property (weak, nonatomic) IBOutlet UIImageView *menuSubView;
+@property (weak, nonatomic) IBOutlet UIImageView *transparentOverlaySubView;
+
 
 - (IBAction)snapStillImage:(id)sender;
 - (IBAction)focusAndExposeTap:(UIGestureRecognizer *)gestureRecognizer;
@@ -56,6 +64,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 @implementation cameraViewController
 
 
+
 - (UIImagePickerController *) photoLibrary{
     if (!_photoLibrary)_photoLibrary = [[UIImagePickerController alloc]init];
     return _photoLibrary;
@@ -74,6 +83,10 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+    //set menu overlay
+    UIImage *transparentOverlay = [UIImage imageNamed:@"transparentMenuOverlay"];
+    [self.transparentOverlaySubView setImage:transparentOverlay];
+    
 	
 	// Create the AVCaptureSession
 	AVCaptureSession *session = [[AVCaptureSession alloc] init];
@@ -253,6 +266,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 	}
 }
 
+
 #pragma mark Actions
 
 
@@ -308,6 +322,28 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 {
 	CGPoint devicePoint = CGPointMake(.5, .5);
 	[self focusWithMode:AVCaptureFocusModeContinuousAutoFocus exposeWithMode:AVCaptureExposureModeContinuousAutoExposure atDevicePoint:devicePoint monitorSubjectAreaChange:NO];
+}
+
+- (IBAction)enableCamera:(id)sender {
+    [self.stillButton setHidden:NO];
+    [self.returnToMenuButton setHidden:NO];
+    //[self.menuSubView removeFromSuperview];
+    //[self.transparentOverlaySubView removeFromSuperview];
+    [self.menuSubView setHidden:YES];
+    [self.transparentOverlaySubView setHidden:YES];
+    
+}
+
+- (IBAction)returnToMenu:(id)sender {
+    [self.stillButton setHidden:YES];
+    [self.returnToMenuButton setHidden:YES];
+    [self.menuSubView setHidden:NO];
+    [self.transparentOverlaySubView setHidden:NO];
+    /*
+    [self.previewView addSubview:self.transparentOverlaySubView];
+    [self.previewView bringSubviewToFront:self.transparentOverlaySubView];
+    [self.previewView addSubview:self.menuSubView];
+    [self.previewView bringSubviewToFront:self.menuSubView]; */
 }
 
 

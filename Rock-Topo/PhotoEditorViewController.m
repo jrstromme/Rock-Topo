@@ -19,6 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *toggleEditingToolsButton;
 
+@property (weak, nonatomic) IBOutlet UIView *buttonsView;
 @property (weak, nonatomic) IBOutlet UIButton *lineButton;
 @property (weak, nonatomic) IBOutlet UIButton *straightButton;
 
@@ -155,18 +156,14 @@
 
 
 - (IBAction)saveImage:(id)sender {
-    UIGraphicsBeginImageContext(self.view.bounds.size);
-    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    //Need to implement code to first remove overlying buttons etc...
-    [self.cancelPhoto removeFromSuperview];
-    [self.toggleEditingToolsButton removeFromSuperview];
-    [self.lineButton removeFromSuperview];
-    [self.saveImageButton removeFromSuperview];
-    [self.undoButton removeFromSuperview];
+
+    [self.buttonsView removeFromSuperview];
+    
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, self.photoView.opaque, 0.0);
+    [self.photoView.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *finishedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.rockPhoto = finishedImage;
-    //UIImageWriteToSavedPhotosAlbum(finishedImage, self, @selector(finishedSaveImage:didFinishSavingWithError:contextInfo:), nil);
     [self performSegueWithIdentifier:@"pushToRouteInfo" sender:self];
 }
 
