@@ -26,12 +26,11 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 // For use in the storyboards.
 @property (weak, nonatomic) IBOutlet UIButton *enableCameraButton;
 @property (nonatomic, weak) IBOutlet cameraView *previewView;
-@property (weak, nonatomic) IBOutlet UIButton *stillButton;
 @property (weak, nonatomic) IBOutlet UIButton *photoLibraryButton;
-@property (weak, nonatomic) IBOutlet UIButton *returnToMenuButton;
 @property (weak, nonatomic) IBOutlet UIImageView *menuSubView;
 @property (weak, nonatomic) IBOutlet UIImageView *transparentOverlaySubView;
-
+@property (weak, nonatomic) IBOutlet UIButton *stillButton;
+@property (weak, nonatomic) IBOutlet UIButton *returnToMenuButton;
 
 - (IBAction)snapStillImage:(id)sender;
 - (IBAction)focusAndExposeTap:(UIGestureRecognizer *)gestureRecognizer;
@@ -63,7 +62,12 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 
 @implementation cameraViewController
 
-
+- (BOOL) loadWithCamera {
+    if (!_loadWithCamera) {
+        _loadWithCamera = NO;
+    }
+    return _loadWithCamera;
+}
 
 - (UIImagePickerController *) photoLibrary{
     if (!_photoLibrary)_photoLibrary = [[UIImagePickerController alloc]init];
@@ -86,6 +90,10 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     //set menu overlay
     UIImage *transparentOverlay = [UIImage imageNamed:@"transparentMenuOverlay"];
     [self.transparentOverlaySubView setImage:transparentOverlay];
+    
+    //choose to display menu or camera
+    if (self.loadWithCamera == YES) [self showCamera];
+    else [self showMenu];
     
 	
 	// Create the AVCaptureSession
@@ -204,7 +212,10 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"pushToEditor"]) {
-        PhotoEditorViewController *destination = segue.destinationViewController;
+        //PhotoEditorViewController *destination = segue.destinationViewController;
+        UINavigationController *navigationController = segue.destinationViewController;
+        PhotoEditorViewController *destination = (PhotoEditorViewController *)([navigationController viewControllers][0]);
+        //PhotoEditorViewController *destination = [[segue destinationViewController] topViewController];
         destination.rockPhoto = self.capturedImage;
     }
 }
@@ -313,7 +324,6 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     self.capturedImage = image;
     [self dismissViewControllerAnimated:YES completion:^{[self performSegueWithIdentifier:@"pushToEditor" sender:self];}];
     
-    //[self performSegueWithIdentifier:@"pushToEditor" sender:self];
     
 }
 
@@ -325,26 +335,29 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 }
 
 - (IBAction)enableCamera:(id)sender {
-    [self.stillButton setHidden:NO];
-    [self.returnToMenuButton setHidden:NO];
-    //[self.menuSubView removeFromSuperview];
-    //[self.transparentOverlaySubView removeFromSuperview];
-    [self.menuSubView setHidden:YES];
-    [self.transparentOverlaySubView setHidden:YES];
-    
+    [self showCamera];
 }
 
 - (IBAction)returnToMenu:(id)sender {
+    [self showMenu];
+}
+
+- (void) showCamera {
+    [self.stillButton setHidden:NO];
+    [self.returnToMenuButton setHidden:NO];
+    [self.menuSubView setHidden:YES];
+    [self.transparentOverlaySubView setHidden:YES];
+}
+
+- (void) showMenu {
     [self.stillButton setHidden:YES];
     [self.returnToMenuButton setHidden:YES];
     [self.menuSubView setHidden:NO];
     [self.transparentOverlaySubView setHidden:NO];
-    /*
-    [self.previewView addSubview:self.transparentOverlaySubView];
-    [self.previewView bringSubviewToFront:self.transparentOverlaySubView];
-    [self.previewView addSubview:self.menuSubView];
-    [self.previewView bringSubviewToFront:self.menuSubView]; */
 }
+
+
+
 
 
 

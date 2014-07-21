@@ -98,7 +98,15 @@
     if ([[segue identifier] isEqualToString:@"pushToRouteInfo"]) {
         SaveImageSettingsViewController *destination = segue.destinationViewController;
         destination.imageToSave = self.rockPhoto;
+    } else if ([[segue identifier] isEqualToString:@"cancelEditorSegue"]) {
+        cameraViewController *destination = segue.destinationViewController;
+        destination.loadWithCamera = YES;
     }
+}
+
+-(IBAction)unwindToRootVC:(UIStoryboardSegue *)segue {
+    //add any revival info
+    [self.buttonsView setHidden:NO];
 }
 
 
@@ -157,7 +165,7 @@
 
 - (IBAction)saveImage:(id)sender {
 
-    [self.buttonsView removeFromSuperview];
+    [self.buttonsView setHidden:YES];
     
     UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, self.photoView.opaque, 0.0);
     [self.photoView.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -227,10 +235,6 @@
     }
     self.path = nil;
 }
-
-
-
-
 
 
 @end

@@ -12,4 +12,6 @@
 
 @property (nonatomic,readonly) UIImage *capturedImage;
 
+@property (nonatomic) BOOL loadWithCamera;
+
 @end

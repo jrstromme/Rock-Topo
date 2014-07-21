@@ -137,8 +137,5 @@
 - (void) segueBackToCamera {
     [self performSegueWithIdentifier:@"returnToCamera" sender:self];
 }
-- (IBAction)segueBackToEditor:(id)sender {
-    [self performSegueWithIdentifier:@"returnToCamera" sender:self];
-}
 
 @end
